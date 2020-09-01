@@ -9,60 +9,65 @@ class MainMenu extends Phaser.Scene {
     this.add.image(300, 250, 'background');
     this.add.image(400, 100, 'logo');
 
-    const hoverImage = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
-    hoverImage.setScale(0.1);
-    hoverImage.setVisible(false);
+    const hoverEffect = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
+    hoverEffect.setScale(0.1);
+    hoverEffect.setVisible(false);
 
-    const playBtn = this.add.image(450, 320, 'play').setScale(0.6);
-    playBtn.setInteractive();
+    const hoverEffectTwo = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
+    hoverEffectTwo.setScale(0.1);
+    hoverEffectTwo.setVisible(false);
 
-    playBtn.on('pointerover', () => {
-      hoverImage.setVisible(true);
-      hoverImage.x = playBtn.x - 230;
-      hoverImage.y = playBtn.y;
-    });
+    const data = [
+      {
+        imageDetOne: 450,
+        imageDetTwo: 320,
+        imageDetThree: 'play',
+        scale: 0.6,
+        loading: 'MainScene',
+      },
+      {
+        imageDetOne: 450,
+        imageDetTwo: 390,
+        imageDetThree: 'instructions',
+        scale: 0.9,
+        loading: 'Instructions',
+      },
+      {
+        imageDetOne: 450,
+        imageDetTwo: 460,
+        imageDetThree: 'leaderBoard',
+        scale: 0.9,
+        loading: 'LeaderBoard',
+      },
+    ];
 
-    playBtn.on('pointerout', () => {
-      hoverImage.setVisible(false);
-    });
+    for (let i = 0; i < data.length; i += 1) {
+      const btnClick = this.add.image(data[i].imageDetOne,
+        data[i].imageDetTwo, data[i].imageDetThree).setScale(
+        data[i].scale,
+      );
 
-    playBtn.on('pointerup', () => {
-      this.scene.start('MainScene');
-    });
+      btnClick.setInteractive();
 
-    const instructionsBtn = this.add.image(450, 390, 'instructions');
-    instructionsBtn.setInteractive();
+      btnClick.on('pointerover', () => {
+        hoverEffect.setVisible(true);
+        hoverEffectTwo.setVisible(true);
+        hoverEffect.x = btnClick.x - 200;
+        hoverEffectTwo.x = btnClick.x + 200;
+        hoverEffectTwo.y = btnClick.y
+        hoverEffect.y = btnClick.y;
+      });
 
-    instructionsBtn.on('pointerover', () => {
-      hoverImage.setVisible(true);
-      hoverImage.x = instructionsBtn.x - 230;
-      hoverImage.y = instructionsBtn.y;
-    });
+      btnClick.on('pointerout', () => {
+        hoverEffect.setVisible(false);
+        hoverEffectTwo.setVisible(false);
 
-    instructionsBtn.on('pointerout', () => {
-      hoverImage.setVisible(false);
-    });
+      });
 
-    instructionsBtn.on('pointerup', () => {
-      this.scene.start('Instructions');
-    });
-
-    const leaderBoardBtn = this.add.image(450, 460, 'leaderBoard');
-    leaderBoardBtn.setInteractive();
-
-    leaderBoardBtn.on('pointerover', () => {
-      hoverImage.setVisible(true);
-      hoverImage.x = leaderBoardBtn.x - 230;
-      hoverImage.y = leaderBoardBtn.y;
-    });
-
-    leaderBoardBtn.on('pointerout', () => {
-      hoverImage.setVisible(false);
-    });
-
-    leaderBoardBtn.on('pointerup', () => {
-      this.scene.start('LeaderBoard');
-    });
+      btnClick.on('pointerup', () => {
+        this.scene.start(`${data[i].loading}`);
+      });
+    }
   }
 }
 

@@ -5,7 +5,7 @@ import MainMenu from './scenes/menu';
 const config = {
     type: Phaser.AUTO,
     parent: 'game-container',
-    width: 800,
+    width: 900,
     height: 600,
     scene: [
       LoadScene,
