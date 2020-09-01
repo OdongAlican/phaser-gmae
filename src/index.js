@@ -1,13 +1,15 @@
 import Phaser from 'phaser';
 import LoadScene from './scenes/preload';
+import MainMenu from './scenes/menu';
 
 const config = {
     type: Phaser.AUTO,
     parent: 'game-container',
-    width: 900,
+    width: 800,
     height: 600,
     scene: [
-      LoadScene
+      LoadScene,
+      MainMenu
     ],
     physics: {
       default: 'arcade',
