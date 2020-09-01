@@ -8,7 +8,6 @@ class MainScene extends Phaser.Scene {
   }
 
   create() {
-
     window.score = 0;
     this.add.image(450, 300, 'sky').setScale(3.35);
     this.add.image(450, 300, 'city').setScale(3.35);
@@ -153,5 +152,6 @@ class MainScene extends Phaser.Scene {
     this.physics.add.overlap(this.ninja, this.kunais, this.collectKunais, null, this);
   }
 }
+
 
 export default MainScene;
