@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import LoadScene from './scenes/preload';
 import MainMenu from './scenes/menu';
+import MainScene from './scenes/mainScene'
 
 const config = {
     type: Phaser.AUTO,
@@ -9,7 +10,8 @@ const config = {
     height: 600,
     scene: [
       LoadScene,
-      MainMenu
+      MainMenu,
+      MainScene
     ],
     physics: {
       default: 'arcade',
