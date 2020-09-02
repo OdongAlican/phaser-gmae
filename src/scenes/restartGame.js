@@ -23,6 +23,10 @@ class GameOver extends Phaser.Scene {
     hoverImage.setScale(0.1);
     hoverImage.setVisible(false);
 
+    const hoverImageTwo = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
+    hoverImageTwo.setScale(0.1);
+    hoverImageTwo.setVisible(false);
+
     const submitBtn = this.add.image(450, 380, 'submitBtn');
     submitBtn.setScale(0.5);
     submitBtn.setInteractive();
@@ -31,28 +35,54 @@ class GameOver extends Phaser.Scene {
       this.getName();
     });
 
-    const playBtn = this.add.image(450, 450, 'playAgain').setScale(0.8);
-    playBtn.setInteractive();
 
-    playBtn.on('pointerover', () => {
-      hoverImage.setVisible(true);
-      hoverImage.x = playBtn.x - 200;
-      hoverImage.y = playBtn.y;
-    });
+    let buttonDetails = [
+        {
+            btnValue: 'playAgain',
+            scaleVal: 0.8,
+            yValue: 220,
+            sceneLoad: 'MainScene'
+        },
+        {
+            btnValue: 'instructions',
+            scaleVal: 0.8,
+            yValue: 650,
+            sceneLoad: 'Instructions'
+        }
+    ]
 
-    playBtn.on('pointerout', () => {
-      hoverImage.setVisible(false);
-    });
+    for(let i = 0; i < buttonDetails.length; i++){
 
-    playBtn.on('pointerup', () => {
-      document.getElementById('user-name').remove();
-      this.scene.start('MainScene');
-    });
-  }
+        const clickButton = this.add.image( 
+            buttonDetails[i].yValue, 520, buttonDetails[i].btnValue).setScale(
+                buttonDetails[i].scaleVal
+            );
+        clickButton.setInteractive();
+    
+        clickButton.on('pointerover', () => {
+          hoverImage.setVisible(true);
+          hoverImageTwo.setVisible(true);
+          hoverImage.x = clickButton.x - 200;
+          hoverImageTwo.x = clickButton.x + 200;
+          hoverImage.y = clickButton.y;
+          hoverImageTwo.y = clickButton.y;
+        });
+    
+        clickButton.on('pointerout', () => {
+          hoverImage.setVisible(false);
+          hoverImageTwo.setVisible(false);
+        });
+    
+        clickButton.on('pointerup', () => {
+          document.getElementById('user-name').remove();
+          this.scene.start(`${buttonDetails[i].sceneLoad}`);
+        });
+      }
+    }
+
 
   getName() {
     this.name = document.getElementById('user-name').value;
-    console.log(this.name)
     if (this.name.length < 13 && this.name.length > 1) {
       saveScore(this.name, window.score);
       this.callLeaderBoard();
