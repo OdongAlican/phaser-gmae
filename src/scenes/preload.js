@@ -12,7 +12,7 @@ import ninjaIdle from '../assets/characters/ninja-idle.png';
 import ninjaJump from '../assets/characters/ninja-jump.png';
 import ninjaRun from '../assets/characters/ninja-run.png';
 import ninjaDead from '../assets/characters/ninja-dead.png';
-import block from '../assets/images/block.png';
+import block from '../assets/images/block.jpg';
 import leaderBoard from '../assets/images/leaderboard-btn.png';
 import star from '../assets/images/ninja-star.png';
 import kunai from '../assets/images/Kunai.png';

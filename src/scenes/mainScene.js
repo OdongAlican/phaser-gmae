@@ -37,13 +37,6 @@ class MainScene extends Phaser.Scene {
       loop: true,
     });
 
-    this.timedEvent2 = this.time.addEvent({
-      delay: 10000,
-      callback: this.dropKunais,
-      callbackScope: this,
-      loop: true,
-    });
-
     this.physics.add.collider(this.ninja, this.platformGroup);
   }
 
@@ -123,34 +116,21 @@ class MainScene extends Phaser.Scene {
     this.scoreText.setText(`Score: ${window.score}`);
   }
 
-  collectKunais(ninja, kunai) {
-    kunai.disableBody(true, true);
-    Helper.updateScore(this, 25);
-    this.scoreText.setText(`Score: ${window.score}`);
-  }
-
   dropStars() {
     this.stars = this.physics.add.group({
       key: 'star',
       repeat: 4,
       setXY: { x: 150, y: 230, stepX: 170 },
     });
+
+    this.stars.children.iterate(function (child) {
+      child.setBounceY(Phaser.Math.FloatBetween(0.2, 0.4));
+    });
+
     this.physics.add.collider(this.stars, this.platformGroup);
     this.physics.add.overlap(this.ninja, this.stars, this.collectStars, null, this);
   }
 
-  dropKunais() {
-    this.kunais = this.physics.add.group({
-      key: 'kunai',
-      repeat: 2,
-      setXY: { x: 300, y: 230, stepX: 400 },
-    });
-    this.kunais.children.each((kunai) => {
-      kunai.setScale(0.25);
-    }, this);
-    this.physics.add.collider(this.kunais, this.platformGroup);
-    this.physics.add.overlap(this.ninja, this.kunais, this.collectKunais, null, this);
-  }
 }
 
 
