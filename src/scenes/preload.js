@@ -2,7 +2,6 @@ import Phaser from 'phaser';
 import logo from '../assets/images/runner.jpg';
 import background from '../assets/images/background.jpg';
 import sky from '../assets/images/general.jpg';
-import city from '../assets/images/city_mg.png';
 import play from '../assets/images/play-btn.png';
 import playAgain from '../assets/images/play-again-btn.png';
 import menu from '../assets/images/menu-btn.png';
@@ -15,7 +14,6 @@ import ninjaDead from '../assets/characters/ninja-dead.png';
 import block from '../assets/images/block.jpg';
 import leaderBoard from '../assets/images/leaderboard-btn.png';
 import star from '../assets/images/ninja-star.png';
-import kunai from '../assets/images/Kunai.png';
 import submitBtn from '../assets/images/submit.png';
 import gameOver from '../assets/images/gameOver.png';
 
@@ -28,7 +26,6 @@ class LoadScene extends Phaser.Scene {
     this.load.image('background', background);
     this.load.image('sky', sky);
     this.load.image('gameOver', gameOver);
-    this.load.image('city', city);
     this.load.image('logo', logo);
     this.load.image('play', play);
     this.load.image('playAgain', playAgain);
@@ -37,7 +34,6 @@ class LoadScene extends Phaser.Scene {
     this.load.image('leaderBoard', leaderBoard);
     this.load.image('ninjaIcon', ninjaIcon);
     this.load.image('star', star);
-    this.load.image('kunai', kunai);
     this.load.image('submitBtn', submitBtn);
     this.load.spritesheet('ninjaIdle', ninjaIdle, { frameWidth: 232, frameHeight: 439 });
     this.load.spritesheet('ninjaJump', ninjaJump, { frameWidth: 352, frameHeight: 439 });
