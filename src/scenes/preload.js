@@ -16,7 +16,7 @@ import block from '../assets/images/block.jpg';
 import leaderBoard from '../assets/images/leaderboard-btn.png';
 import star from '../assets/images/ninja-star.png';
 import kunai from '../assets/images/Kunai.png';
-import submitBtn from '../assets/images/submit-btn.png';
+import submitBtn from '../assets/images/submit.png';
 
 class LoadScene extends Phaser.Scene {
   constructor() {
