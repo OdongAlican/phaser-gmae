@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import logo from '../assets/images/runner.jpg';
-import background from '../assets/images/main.jpg';
-import sky from '../assets/images/sky_bg.png';
+import background from '../assets/images/background.jpg';
+import sky from '../assets/images/general.jpg';
 import city from '../assets/images/city_mg.png';
 import play from '../assets/images/play-btn.png';
 import playAgain from '../assets/images/play-again-btn.png';
@@ -17,6 +17,7 @@ import leaderBoard from '../assets/images/leaderboard-btn.png';
 import star from '../assets/images/ninja-star.png';
 import kunai from '../assets/images/Kunai.png';
 import submitBtn from '../assets/images/submit.png';
+import gameOver from '../assets/images/gameOver.png';
 
 class LoadScene extends Phaser.Scene {
   constructor() {
@@ -26,6 +27,7 @@ class LoadScene extends Phaser.Scene {
   preload() {
     this.load.image('background', background);
     this.load.image('sky', sky);
+    this.load.image('gameOver', gameOver);
     this.load.image('city', city);
     this.load.image('logo', logo);
     this.load.image('play', play);

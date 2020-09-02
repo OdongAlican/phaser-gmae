@@ -10,14 +10,14 @@ class LeaderBoard extends Phaser.Scene {
     this.add.image(300, 250, 'background');
     this.add.image(450, 100, 'logo');
 
-    this.add.text(450, 190, 'LEADERBOARD', { fontSize: 36 }).setOrigin(0.5);
+    this.add.text(450, 220, 'LEADERBOARD', { fontSize: 36 }).setOrigin(0.5);
 
     this.loading = this.add.text(450, 350, 'Loading...', { fontSize: 26 }).setOrigin(0.5);
 
     this.retrieveScore();
 
     const hoverImage = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
-    hoverImage.setScale(0.08);
+    hoverImage.setScale(0.15);
     hoverImage.setVisible(false);
 
     const menuBtn = this.add.image(150, 550, 'menu').setScale(0.4);

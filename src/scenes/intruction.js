@@ -20,7 +20,7 @@ class Instructions extends Phaser.Scene {
     this.add.text(450, 420, 'Move with left and right arrows', { fontSize: 20 }).setOrigin(0.5);
 
     const hoverImage = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
-    hoverImage.setScale(0.08);
+    hoverImage.setScale(0.15);
     hoverImage.setVisible(false);
 
     const playBtn = this.add.image(200, 520, 'play').setScale(0.4);

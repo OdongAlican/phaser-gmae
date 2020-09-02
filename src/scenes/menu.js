@@ -7,14 +7,14 @@ class MainMenu extends Phaser.Scene {
 
   create() {
     this.add.image(300, 250, 'background');
-    this.add.image(400, 100, 'logo');
+    this.add.image(450, 100, 'logo');
 
-    const hoverEffect = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
-    hoverEffect.setScale(0.1);
+    const hoverEffect = this.add.image(200, 200, 'ninjaIcon')
+    hoverEffect.setScale(0.2);
     hoverEffect.setVisible(false);
 
-    const hoverEffectTwo = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
-    hoverEffectTwo.setScale(0.1);
+    const hoverEffectTwo = this.add.image(200, 200, 'ninjaIcon')
+    hoverEffectTwo.setScale(0.2);
     hoverEffectTwo.setVisible(false);
 
     const data = [

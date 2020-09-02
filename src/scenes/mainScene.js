@@ -9,9 +9,7 @@ class MainScene extends Phaser.Scene {
 
   create() {
     window.score = 0;
-    this.add.image(450, 300, 'sky').setScale(3.35);
-    this.add.image(450, 300, 'city').setScale(3.35);
-
+    this.add.image(550, 10, 'sky')
     this.ninja = new Runner(this, 200, 300, 'ninjaIdle');
 
     this.platformGroup = this.add.group({
@@ -75,7 +73,7 @@ class MainScene extends Phaser.Scene {
     }, this);
 
     if (minDistance > this.nextPlatformDistance) {
-      const nextPlatformWidth = Phaser.Math.Between(50, 250);
+      const nextPlatformWidth = Phaser.Math.Between(100, 250);
       const platformRandomHeight = 10 * Phaser.Math.Between(-40, 40);
 
       const nextPlatformGap = rightmostPlatformHeight + platformRandomHeight;
@@ -107,7 +105,7 @@ class MainScene extends Phaser.Scene {
       platform.setImmovable(true);
     }
     platform.displayWidth = platformWidth;
-    this.nextPlatformDistance = Phaser.Math.Between(70, 200);
+    this.nextPlatformDistance = Phaser.Math.Between(70, 150);
   }
 
   collectStars(ninja, star) {
@@ -124,7 +122,7 @@ class MainScene extends Phaser.Scene {
     });
 
     this.stars.children.iterate(function (child) {
-      child.setBounceY(Phaser.Math.FloatBetween(0.2, 0.4));
+      child.setBounceY(Phaser.Math.FloatBetween(0.1, 0.2));
     });
 
     this.physics.add.collider(this.stars, this.platformGroup);
