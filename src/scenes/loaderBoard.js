@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
-import { getScores } from '../helpers/scores';
+import fetchData from '../helpers/scores'
+
+let fetchDataInstance = fetchData()
 
 class LeaderBoard extends Phaser.Scene {
   constructor() {
@@ -57,7 +59,7 @@ class LeaderBoard extends Phaser.Scene {
   }
 
   async retrieveScore() {
-    const response = await getScores();
+    const response = await fetchDataInstance.getScores();
     const scores = response.sort((x, y) => y.score - x.score);
     if (scores.empty) {
       this.loading.text = 'Scores are not available';
@@ -69,10 +71,10 @@ class LeaderBoard extends Phaser.Scene {
   displayScores(info) {
     let spaceY = 0;
     this.loading.text = '';
-    for (let i = 0; i <= 9; i += 1) {
-      this.add.text(340, 220 + spaceY, `${i + 1}.`, { fontSize: 20 });
-      this.add.text(375, 220 + spaceY, `${info[i].user}`, { fontSize: 20 });
-      this.add.text(510, 220 + spaceY, `${info[i].score}`, { fontSize: 20 });
+    for (let i = 0; i <= 8; i += 1) {
+      this.add.text(340, 240 + spaceY, `${i + 1}.`, { fontSize: 20 });
+      this.add.text(375, 240 + spaceY, `${info[i].user}`, { fontSize: 20 });
+      this.add.text(510, 240 + spaceY, `${info[i].score}`, { fontSize: 20 });
       spaceY += 25;
     }
   }
