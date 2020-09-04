@@ -81,10 +81,10 @@ class GameOver extends Phaser.Scene {
   }
 
 
-  getName() {
+  async getName() {
     this.name = document.getElementById('user-name').value;
     if (this.name.length < 13 && this.name.length > 1) {
-      fetchData.saveScore(this.name, window.score);
+      await fetchData.saveScore(this.name, window.score);
       this.callLeaderBoard();
     }
   }
