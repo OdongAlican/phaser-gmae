@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
-import fetchData from '../helpers/scores'
+import fetchData from '../helpers/scores';
 
-let fetchDataInstance = fetchData()
+const fetchDataInstance = fetchData();
 
 class LeaderBoard extends Phaser.Scene {
   constructor() {

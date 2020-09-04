@@ -9,7 +9,7 @@ class MainScene extends Phaser.Scene {
 
   create() {
     window.score = 0;
-    this.add.image(550, 10, 'sky')
+    this.add.image(550, 10, 'sky');
     this.ninja = new Runner(this, 200, 300, 'ninjaIdle');
 
     this.platformGroup = this.add.group({
@@ -121,14 +121,13 @@ class MainScene extends Phaser.Scene {
       setXY: { x: 150, y: 230, stepX: 170 },
     });
 
-    this.stars.children.iterate(function (child) {
+    this.stars.children.iterate((child) => {
       child.setBounceY(Phaser.Math.FloatBetween(0.1, 0.2));
     });
 
     this.physics.add.collider(this.stars, this.platformGroup);
     this.physics.add.overlap(this.ninja, this.stars, this.collectStars, null, this);
   }
-
 }
 
 

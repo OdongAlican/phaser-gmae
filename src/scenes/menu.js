@@ -9,11 +9,11 @@ class MainMenu extends Phaser.Scene {
     this.add.image(300, 250, 'background');
     this.add.image(450, 100, 'logo');
 
-    const hoverEffect = this.add.image(200, 200, 'ninjaIcon')
+    const hoverEffect = this.add.image(200, 200, 'ninjaIcon');
     hoverEffect.setScale(0.2);
     hoverEffect.setVisible(false);
 
-    const hoverEffectTwo = this.add.image(200, 200, 'ninjaIcon')
+    const hoverEffectTwo = this.add.image(200, 200, 'ninjaIcon');
     hoverEffectTwo.setScale(0.2);
     hoverEffectTwo.setVisible(false);
 
@@ -54,14 +54,13 @@ class MainMenu extends Phaser.Scene {
         hoverEffectTwo.setVisible(true);
         hoverEffect.x = btnClick.x - 200;
         hoverEffectTwo.x = btnClick.x + 200;
-        hoverEffectTwo.y = btnClick.y
+        hoverEffectTwo.y = btnClick.y;
         hoverEffect.y = btnClick.y;
       });
 
       btnClick.on('pointerout', () => {
         hoverEffect.setVisible(false);
         hoverEffectTwo.setVisible(false);
-
       });
 
       btnClick.on('pointerup', () => {

@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import fetchData from '../helpers/scores'
+import fetchData from '../helpers/scores';
 
 class GameOver extends Phaser.Scene {
   constructor() {
@@ -84,7 +84,7 @@ class GameOver extends Phaser.Scene {
   getName() {
     this.name = document.getElementById('user-name').value;
     if (this.name.length < 13 && this.name.length > 1) {
-      let fetchDataInstance = fetchData()
+      const fetchDataInstance = fetchData();
       fetchDataInstance.saveScore(this.name, window.score);
       this.callLeaderBoard();
     }

@@ -7,43 +7,43 @@ class Instructions extends Phaser.Scene {
 
   create() {
     this.add.image(300, 250, 'background');
-    let storyObject = [
+    const storyObject = [
       {
         yValue: 50,
         text: 'Story Line',
-        font: 36
+        font: 36,
       },
       {
         yValue: 100,
         text: 'The Shaolin Temple has been invaded by Ninja Assasins,',
-        font: 20
+        font: 20,
       },
       {
         yValue: 140,
         text: 'a young Kung-fu Master escapes and is being chased.',
-        font: 20
-      },      {
+        font: 20,
+      }, {
         yValue: 180,
         text: 'The Ninja collects his dirts as he runs after the Master.',
-        font: 20
-      },      {
+        font: 20,
+      }, {
         yValue: 280,
         text: 'Game keyboard controls',
-        font: 30
-      },      {
+        font: 30,
+      }, {
         yValue: 320,
         text: 'Jump over platforms with the up arrow',
-        font: 20
-      },      {
+        font: 20,
+      }, {
         yValue: 360,
         text: 'Move with left and right arrows',
-        font: 20
-      }
-    ]
-    
+        font: 20,
+      },
+    ];
+
     storyObject.forEach(element => {
       this.add.text(450, element.yValue, `${element.text}`, { fontSize: element.font }).setOrigin(0.5);
-    })
+    });
 
     const hoverImage = this.add.image(100, 100, 'ninjaIcon').setDepth(1);
     hoverImage.setScale(0.15);
