@@ -20,6 +20,9 @@ This is a Platform game where users can play from their browsers and submit thei
 # Live Version 
 - [Live Link](https://stormy-thicket-31990.herokuapp.com/)
 
+# Video Description Link
+- [Video](https://www.loom.com/share/ef3265d16d894b5286d7435c6b9492e6)
+
 # Game Instructions
 - Use the up arrow key to jump over the infinite platforms.
 - Use the left and right arrow keys to move and redirect your jump.
