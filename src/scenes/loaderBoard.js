@@ -1,8 +1,6 @@
 import Phaser from 'phaser';
 import fetchData from '../helpers/scores';
 
-const fetchDataInstance = fetchData();
-
 class LeaderBoard extends Phaser.Scene {
   constructor() {
     super('LeaderBoard');
@@ -59,7 +57,7 @@ class LeaderBoard extends Phaser.Scene {
   }
 
   async retrieveScore() {
-    const response = await fetchDataInstance.getScores();
+    const response = await fetchData.getScores();
     const scores = response.sort((x, y) => y.score - x.score);
     if (scores.empty) {
       this.loading.text = 'Scores are not available';

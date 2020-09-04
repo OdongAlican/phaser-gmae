@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const fetchData = () => {
+const fetchData = (() => {
   const api = {
     key: 'AIzaSyBLU8g2dr1vcLIndih79nBBLETv9HApnrU',
     baseurl: 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/',
@@ -18,6 +18,6 @@ const fetchData = () => {
   return {
     saveScore, getScores,
   };
-};
+})();
 
 export default fetchData;
