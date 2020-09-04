@@ -9,7 +9,7 @@ import './style/style.css'
 
 const config = {
     type: Phaser.AUTO,
-    parent: 'game-container',
+    parent: 'runner-game',
     width: 900,
     height: 600,
     scene: [

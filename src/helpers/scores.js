@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const fetchData = () => {
   const api = {
-    key: 'NLwNRR6lDiDhTAfns436',
+    key: 'AIzaSyBLU8g2dr1vcLIndih79nBBLETv9HApnrU',
     baseurl: 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/',
   };
 
