@@ -42,7 +42,7 @@ This is a Platform game where users can play from their browsers and submit thei
 
 # Project Design
 
-## Project purpuse
+## Project purpose
 
 Development of a platform game as part of the Microverse curriculum to show technical and soft skills learned through the curriculum. Use of Phaser 3 to develop the game.
 
